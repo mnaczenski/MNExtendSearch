@@ -1,0 +1,31 @@
+{
+    "name": "mn/extend-search",
+    "description": "Example plugin for extending the search",
+    "version": "v1.0.0",
+    "type": "shopware-platform-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "shopware AG"
+        }
+    ],
+    "require": {
+        "shopware/core": "*"
+    },
+    "extra": {
+        "shopware-plugin-class": "MNExtendSearch\\MNExtendSearch",
+        "label": {
+            "de-DE": "Label für das Plugin PluginQuickStart",
+            "en-GB": "Label for the plugin PluginQuickStart"
+        },
+        "description": {
+            "de-DE": "Beschreibung für das Plugin PluginQuickStart",
+            "en-GB": "Description for the plugin PluginQuickStart"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "MNExtendSearch\\": "src/"
+        }
+    }
+}
