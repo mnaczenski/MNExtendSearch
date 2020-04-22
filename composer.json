@@ -15,12 +15,12 @@
     "extra": {
         "shopware-plugin-class": "MNExtendSearch\\MNExtendSearch",
         "label": {
-            "de-DE": "Label für das Plugin PluginQuickStart",
-            "en-GB": "Label for the plugin PluginQuickStart"
+            "de-DE": "Sucherweiterung für Bescheibung",
+            "en-GB": "Searchextension for description"
         },
         "description": {
-            "de-DE": "Beschreibung für das Plugin PluginQuickStart",
-            "en-GB": "Description for the plugin PluginQuickStart"
+            "de-DE": "Beschreibung durchsuchbar machen",
+            "en-GB": "make the description searchable"
         }
     },
     "autoload": {
