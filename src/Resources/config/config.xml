@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/master/src/Core/System/SystemConfig/Schema/config.xsd">
+
+    <card>
+        <title>Search Configuration</title>
+        <title lang="de-DE">Suchkonfiguration</title>
+        <input-field type="bool">
+            <name>description</name>
+            <label>Search Description</label>
+            <label lang="de-DE">Beschreibung durchsuchen</label>
+        </input-field>        
+        <input-field type="int">
+            <name>rankingdescription</name>
+            <label>Description Ranking</label>
+            <label lang="de-DE">Gewichtung Beschreibung</label>
+            <defaultValue>500</defaultValue>
+        </input-field>
+        <input-field type="bool">
+            <name>metadescription</name>
+            <label>Search Meta Descriotion</label>
+            <label lang="de-DE">Meta Description durchsuchen</label>
+        </input-field>        
+        <input-field type="int">
+            <name>rankingmetadescription</name>
+            <label>Meta Description Ranking</label>
+            <label lang="de-DE">Gewichtung Meta Description</label>
+            <defaultValue>250</defaultValue>
+        </input-field>
+        <input-field type="bool">
+            <name>categories</name>
+            <label>Search Category Names</label>
+            <label lang="de-DE">Kategorienamen durchsuchen</label>
+        </input-field>        
+        <input-field type="int">
+            <name>rankingcategories</name>
+            <label>Category Names Ranking</label>
+            <label lang="de-DE">Gewichtung Kategorienamen</label>
+            <defaultValue>500</defaultValue>
+        </input-field>
+    </card>
+</config>
