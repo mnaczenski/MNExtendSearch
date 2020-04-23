@@ -6,6 +6,7 @@ This plugin allows you to include additional fields in the product search. The f
 * Product Description
 * Category Name
 * Meta Title
+* Property Values
 
 Additionally it is possible to prioritize the following fields higher:
 
@@ -31,6 +32,7 @@ Dieses Plugin ermöglicht es dir zusätzliche Felder in die Produktsuche mit ein
 * Produktbeschreibung
 * Kategoriename
 * Meta Title
+* Eigenschaften
 
 Zusätzlich ist es möglich die folgenden Felder höher zu priorisieren:
 

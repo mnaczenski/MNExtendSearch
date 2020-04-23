@@ -30,16 +30,23 @@ class MySearchKeywordAnalyser implements ProductSearchKeywordAnalyzerInterface
     private $categoryRepository;
 
     /**
+     * @var EntityRepositoryInterface
+     */
+    private $optionRepository;
+
+
+    /**
      * @var SystemConfigService
      */
     private $systemConfigService;
 
-    public function __construct(ProductSearchKeywordAnalyzerInterface $coreAnalyzer, TokenizerInterface $tokenizer, SystemConfigService $systemConfigService, EntityRepositoryInterface $categoryRepository)
+    public function __construct(ProductSearchKeywordAnalyzerInterface $coreAnalyzer, TokenizerInterface $tokenizer, SystemConfigService $systemConfigService, EntityRepositoryInterface $categoryRepository, EntityRepositoryInterface $optionRepository)
     {
         $this->coreAnalyzer = $coreAnalyzer;
         $this->tokenizer = $tokenizer;
         $this->systemConfigService = $systemConfigService;
         $this->categoryRepository = $categoryRepository;
+        $this->optionRepository = $optionRepository;
     }
     public function analyze(ProductEntity $product, Context $context): AnalyzedKeywordCollection
     {
@@ -99,6 +106,26 @@ class MySearchKeywordAnalyser implements ProductSearchKeywordAnalyzerInterface
                 foreach ($categories as $category) {
                     $categoryName = $category->getTranslation('name');
                     $keywords->add(new AnalyzedKeyword((string) $categoryName, $ranking));
+                }
+            }
+        }
+
+        if ($this->systemConfigService->get('MNExtendSearch.config.properties') == true) {
+
+            $properties = $product->getPropertyIds();
+
+            $properties = $this->optionRepository->search(
+                new Criteria($properties),
+                \Shopware\Core\Framework\Context::createDefaultContext()
+            );
+
+
+            $ranking = $this->systemConfigService->get('MNExtendSearch.config.rankingproperties');
+
+            if ($properties) {
+                foreach ($properties as $property) {
+                    $propertyName = $property->getTranslation('name');
+                    $keywords->add(new AnalyzedKeyword((string) $propertyName, $ranking));
                 }
             }
         }

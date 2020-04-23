@@ -49,6 +49,17 @@
             <label lang="de-DE">Gewichtung Kategorienamen</label>
             <defaultValue>500</defaultValue>
         </input-field>
+        <input-field type="bool">
+            <name>properties</name>
+            <label>Search Property Values</label>
+            <label lang="de-DE">Eigenschaften durchsuchen</label>
+        </input-field>        
+        <input-field type="int">
+            <name>rankingproperties</name>
+            <label>Property Values Ranking</label>
+            <label lang="de-DE">Gewichtung Eigenschaften</label>
+            <defaultValue>500</defaultValue>
+        </input-field>
     </card>
     <card>
         <title>Boosting Configuration</title>
