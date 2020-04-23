@@ -18,13 +18,24 @@
         </input-field>
         <input-field type="bool">
             <name>metadescription</name>
-            <label>Search Meta Descriotion</label>
+            <label>Search Meta Description</label>
             <label lang="de-DE">Meta Description durchsuchen</label>
         </input-field>        
         <input-field type="int">
             <name>rankingmetadescription</name>
             <label>Meta Description Ranking</label>
             <label lang="de-DE">Gewichtung Meta Description</label>
+            <defaultValue>250</defaultValue>
+        </input-field>
+        <input-field type="bool">
+            <name>metatitle</name>
+            <label>Search Meta Title</label>
+            <label lang="de-DE">Meta Title durchsuchen</label>
+        </input-field>        
+        <input-field type="int">
+            <name>rankingmetatitle</name>
+            <label>Meta Title Ranking</label>
+            <label lang="de-DE">Gewichtung Meta Title</label>
             <defaultValue>250</defaultValue>
         </input-field>
         <input-field type="bool">
@@ -38,7 +49,11 @@
             <label lang="de-DE">Gewichtung Kategorienamen</label>
             <defaultValue>500</defaultValue>
         </input-field>
-                <input-field type="bool">
+    </card>
+    <card>
+        <title>Boosting Configuration</title>
+        <title lang="de-DE">Boosting Konfiguration</title>
+        <input-field type="bool">
             <name>productname</name>
             <label>Boost Product Names</label>
             <label lang="de-DE">Produktnamen Priorisieren</label>
@@ -58,6 +73,39 @@
             <name>rankingproductnumber</name>
             <label>Boosting Value for Product Numbers</label>
             <label lang="de-DE">Wert der Priorisierung für Produktnummern</label>
+            <defaultValue>500</defaultValue>
+        </input-field>
+        <input-field type="bool">
+            <name>manufacturername</name>
+            <label>Boost Manufacturer Names</label>
+            <label lang="de-DE">Herstellername Priorisieren</label>
+        </input-field>        
+        <input-field type="int">
+            <name>rankingmanufacturername</name>
+            <label>Boosting Value for Manufacturer Names</label>
+            <label lang="de-DE">Wert der Priorisierung für Herstellernamen</label>
+            <defaultValue>500</defaultValue>
+        </input-field>
+        <input-field type="bool">
+            <name>eans</name>
+            <label>Boost EAN</label>
+            <label lang="de-DE">EAN Priorisieren</label>
+        </input-field>        
+        <input-field type="int">
+            <name>rankingeans</name>
+            <label>Boosting Value for EAN</label>
+            <label lang="de-DE">Wert der Priorisierung für EAN</label>
+            <defaultValue>500</defaultValue>
+        </input-field>
+        <input-field type="bool">
+            <name>manufacturernumber</name>
+            <label>Boost Manufacturer Number</label>
+            <label lang="de-DE">Herstellernummer Priorisieren</label>
+        </input-field>        
+        <input-field type="int">
+            <name>rankingmanufacturernumber</name>
+            <label>Boosting Value for Manufacturer Number</label>
+            <label lang="de-DE">Wert der Priorisierung für Herstellernummer</label>
             <defaultValue>500</defaultValue>
         </input-field>
     </card>

@@ -5,12 +5,15 @@ This plugin allows you to include additional fields in the product search. The f
 * Meta Descritption
 * Product Description
 * Category Name
+* Meta Title
 
 Additionally it is possible to prioritize the following fields higher:
 
 * Product Name
 * Product Number
-
+* Manufacturer Name
+* EAN
+* Manufacturer Number
 
 installation instructions:
 - Upload the archive in your plugin manager
@@ -27,11 +30,15 @@ Dieses Plugin ermöglicht es dir zusätzliche Felder in die Produktsuche mit ein
 * Meta Descritption
 * Produktbeschreibung
 * Kategoriename
+* Meta Title
 
 Zusätzlich ist es möglich die folgenden Felder höher zu priorisieren:
 
 * Produktname
 * Produktnummer
+* Herstellername
+* EAN
+* Herstellernummer
 
 
 Installationsanleitung:

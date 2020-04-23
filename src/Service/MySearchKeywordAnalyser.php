@@ -72,6 +72,19 @@ class MySearchKeywordAnalyser implements ProductSearchKeywordAnalyzerInterface
             }
         }
 
+        if ($this->systemConfigService->get('MNExtendSearch.config.metatitle') == true) {
+            $metatitle = $product->getTranslation('metaTitle');
+
+            $ranking = $this->systemConfigService->get('MNExtendSearch.config.rankingmetatitle');
+
+            if ($metatitle) {
+                $tokens = $this->tokenizer->tokenize((string) $metatitle);
+                foreach ($tokens as $token) {
+                    $keywords->add(new AnalyzedKeyword((string) $token, $ranking));
+                }
+            }
+        }
+
         if ($this->systemConfigService->get('MNExtendSearch.config.categories') == true) {
 
             $categories = $product->getCategoryTree();
@@ -107,6 +120,33 @@ class MySearchKeywordAnalyser implements ProductSearchKeywordAnalyzerInterface
         if ($this->systemConfigService->get('MNExtendSearch.config.productnumber') == true) {
             $ranking = $this->systemConfigService->get('MNExtendSearch.config.rankingproductnumber');
             $keywords->add(new AnalyzedKeyword($product->getProductNumber(), $ranking));
+        }
+
+        if ($this->systemConfigService->get('MNExtendSearch.config.manufacturername') == true) {
+
+            $ranking = $this->systemConfigService->get('MNExtendSearch.config.rankingmanufacturername');
+
+            if ($product->getManufacturer()) {
+                $keywords->add(new AnalyzedKeyword((string) $product->getManufacturer()->getTranslation('name'), $ranking));
+            }
+        }
+
+        if ($this->systemConfigService->get('MNExtendSearch.config.eans') == true) {
+
+            $ranking = $this->systemConfigService->get('MNExtendSearch.config.rankingeans');
+            
+            if ($product->getEan()) {
+                $keywords->add(new AnalyzedKeyword($product->getEan(), $ranking));
+            }
+        }
+
+        if ($this->systemConfigService->get('MNExtendSearch.config.manufacturernumber') == true) {
+
+            $ranking = $this->systemConfigService->get('MNExtendSearch.config.rankingmanufacturernumber');
+            
+            if ($product->getEan()) {
+                $keywords->add(new AnalyzedKeyword($product->getManufacturerNumber(), 500));
+            }
         }
 
         return $keywords;
