@@ -171,7 +171,7 @@ class MySearchKeywordAnalyser implements ProductSearchKeywordAnalyzerInterface
 
             $ranking = $this->systemConfigService->get('MNExtendSearch.config.rankingmanufacturernumber');
             
-            if ($product->getEan()) {
+            if ($product->getManufacturerNumber()) {
                 $keywords->add(new AnalyzedKeyword($product->getManufacturerNumber(), 500));
             }
         }
