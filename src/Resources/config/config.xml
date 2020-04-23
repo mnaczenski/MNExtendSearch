@@ -38,5 +38,27 @@
             <label lang="de-DE">Gewichtung Kategorienamen</label>
             <defaultValue>500</defaultValue>
         </input-field>
+                <input-field type="bool">
+            <name>productname</name>
+            <label>Boost Product Names</label>
+            <label lang="de-DE">Produktnamen Priorisieren</label>
+        </input-field>        
+        <input-field type="int">
+            <name>rankingproductname</name>
+            <label>Boosting Value for Product Names</label>
+            <label lang="de-DE">Wert der Priorisierung für Produktnamen</label>
+            <defaultValue>500</defaultValue>
+        </input-field>
+        <input-field type="bool">
+            <name>productnumber</name>
+            <label>Boost Product Numbers</label>
+            <label lang="de-DE">Produktnummern Priorisieren</label>
+        </input-field>        
+        <input-field type="int">
+            <name>rankingproductnumber</name>
+            <label>Boosting Value for Product Numbers</label>
+            <label lang="de-DE">Wert der Priorisierung für Produktnummern</label>
+            <defaultValue>500</defaultValue>
+        </input-field>
     </card>
 </config>

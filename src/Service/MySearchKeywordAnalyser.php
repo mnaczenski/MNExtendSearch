@@ -90,6 +90,25 @@ class MySearchKeywordAnalyser implements ProductSearchKeywordAnalyzerInterface
             }
         }
 
+        if ($this->systemConfigService->get('MNExtendSearch.config.productname') == true) {
+
+            $productname = $product->getTranslation('name');
+
+            $ranking = $this->systemConfigService->get('MNExtendSearch.config.rankingproductname');
+
+            if ($productname) {
+                $tokens = $this->tokenizer->tokenize((string) $productname);
+                foreach ($tokens as $token) {
+                    $keywords->add(new AnalyzedKeyword((string) $token, $ranking));
+                }
+            }
+        }
+
+        if ($this->systemConfigService->get('MNExtendSearch.config.productnumber') == true) {
+            $ranking = $this->systemConfigService->get('MNExtendSearch.config.rankingproductnumber');
+            $keywords->add(new AnalyzedKeyword($product->getProductNumber(), $ranking));
+        }
+
         return $keywords;
     }
 }
